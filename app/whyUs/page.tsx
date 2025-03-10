@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { ScrollArea } from '@radix-ui/react-scroll-area'
 
-function whyUsPage() {
+function WhyUsPage() {
   return (
     <div className="pb-20">
       <div className="flex justify-center font-medium pt-10">
@@ -82,4 +82,4 @@ function whyUsPage() {
   )
 }
 
-export default whyUsPage
+export default WhyUsPage

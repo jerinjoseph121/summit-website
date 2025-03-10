@@ -2,6 +2,8 @@
 
 import React from "react"
 import { useEffect, useState } from "react"
+import Image from 'next/image'
+import SummitLogoImage from '@/public/summit_logo.svg'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,7 +21,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { ChevronDown, House, Goal, Users } from "lucide-react"
+import { ChevronDown, House, Goal, SquareChartGantt, Users } from "lucide-react"
 
 const getCurrentPage = () => {
   // if (typeof window !== "undefined") {
@@ -37,8 +39,10 @@ const getCurrentPageLabel = () => {
     return 'Home';
   else if (currentPage === 'whyUs')
     return 'Why Us?';
-  else if (currentPage === 'contacts')
+  else if (currentPage === 'team')
     return 'The Team';
+  else if (currentPage === 'majorProjects')
+    return 'Major Projects';
 
   return 'Home';
 }
@@ -49,9 +53,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="sticky top-0 bg-inherit z-10 flex items-center grid grid-cols-5 gap-4 px-8 py-4 border-b-4">
-      <div className="text-xs md:text-sm lg:text-base">
-        Summit Engineering & Technology
+    <div className="sticky top-0 bg-inherit z-10 flex items-center grid grid-cols-7 gap-4 px-8 py-4 border-b-4">
+      <div className="col-span-2 flex items-center">
+        <div className="flex items-center">
+          <Image className="h-max-40 h-min-40" src={SummitLogoImage} alt='Summit Logo' width={64} height={40} />
+        </div>
+        <div className="hidden lg:inline text-base pl-5">
+          Summit Engineering & Technology
+        </div>
+        <div className="hidden md:inline lg:hidden text-base pl-5">
+          Summit Engg & Tech
+        </div>
       </div>
       <div className="col-span-3 flex justify-center">
         <NavigationMenu>
@@ -62,7 +74,7 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="flex justify-end">
+      <div className="col-span-2 flex justify-end">
         <ThemeController />
       </div>
     </div>
@@ -111,6 +123,16 @@ function SummitDropdownMenu() {
                   <Users />
                 </div>
                 <span className="pl-2">The Team</span>
+              </div>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setCurrentPage('The Team')} asChild>
+            <Link href="/majorProjects" passHref>
+              <div className='flex items-center'>
+                <div className="pt-0.5">
+                  <SquareChartGantt />
+                </div>
+                <span className="pl-2">Major Projects</span>
               </div>
             </Link>
           </DropdownMenuItem>
