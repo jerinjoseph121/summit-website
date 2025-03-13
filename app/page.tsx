@@ -10,14 +10,12 @@ export default function Home() {
       <div className="flex justify-center font-medium pt-10">
         <div className="w-5/6">
           <h1 className="text-xl md:text-3xl lg:text-5xl ">About Us</h1>
-          <div>
-            <p className="text-sm md:text-base lg:text-xl pt-5">
-              Summit Engineering & Technology LLC is a multi-service Company providing comprehensive MEP services for a diverse range of projects.
-              From concept to completion, we specialize in designing, installing, and maintaining cutting-edge electrical, mechanical and plumbing systems that meet the highest industry standards.
-              Summit Engineering & Technology was established in 2012 with a sole motive to break new grounds in its business domain and provide turnkey solutions to the customers in Oman.
-              Our expertise particularly extends to 11kV/415V electrical works, showcasing a profound focus on high-voltage and low-voltage electrical systems, covering everything from the design and installation to the maintenance of these specific electrical components.
-              Our commitment lies in consistently delivering top-tier solutions within this focused and specialized field.
-            </p>
+          <div className="text-sm md:text-base lg:text-xl pt-5">
+            Summit Engineering & Technology LLC is a multi-service Company providing comprehensive MEP services for a diverse range of projects.
+            From concept to completion, we specialize in designing, installing, and maintaining cutting-edge electrical, mechanical and plumbing systems that meet the highest industry standards.
+            Summit Engineering & Technology was established in 2012 with a sole motive to break new grounds in its business domain and provide turnkey solutions to the customers in Oman.
+            Our expertise particularly extends to 11kV/415V electrical works, showcasing a profound focus on high-voltage and low-voltage electrical systems, covering everything from the design and installation to the maintenance of these specific electrical components.
+            Our commitment lies in consistently delivering top-tier solutions within this focused and specialized field.
           </div>
         </div>
       </div>

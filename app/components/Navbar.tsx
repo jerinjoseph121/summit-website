@@ -126,7 +126,7 @@ function SummitDropdownMenu() {
               </div>
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setCurrentPage('The Team')} asChild>
+          <DropdownMenuItem onClick={() => setCurrentPage('Major Projects')} asChild>
             <Link href="/majorProjects" passHref>
               <div className='flex items-center'>
                 <div className="pt-0.5">
