@@ -6,7 +6,6 @@ import {
   TableCaption,
   TableCell,
   TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
 import { majorProjectsData, scopeOfWorkProps } from '../utils/majorProjectsData';
@@ -15,7 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const ScopeOfWorkList = ({ data }: { data: scopeOfWorkProps }) => {
   return (
-    <div className='pt-3'>
+    <div>
       {data.electricalInstallation && (
         <div className='pt-2'>
           <strong>Electrical Installation: </strong>
@@ -66,9 +65,9 @@ const ScopeOfWorkList = ({ data }: { data: scopeOfWorkProps }) => {
 
 function MajorProjectsPage() {
   return (
-    <div className="pb-20">
+    <div className="pb-5 md:pb-10 lg:pb-20">
       <div className="flex justify-center font-medium pt-10">
-        <div className="w-5/6">
+        <div className="w-5/6 px-10">
           <div>
             <h1 className="text-xl md:text-3xl lg:text-5xl ">Major Projects</h1>
           </div>
@@ -79,9 +78,9 @@ function MajorProjectsPage() {
                   <CarouselItem key={index}>
                     <div>
                       <div className='flex justify-center'>
-                        <Card className='p-10'>
+                        <Card className='p-3 md:p-5 lg:p-10'>
                           <CardContent>
-                            <div className="flex items-center justify-center">
+                            <div className="flex items-center justify-center pt-5">
                               <Image src={majorProjectItem.projectImage} alt={'ShadCN'} />
                             </div>
                             <div className='flex justify-center pt-5'>
@@ -93,24 +92,28 @@ function MajorProjectsPage() {
                       <div className='flex justify-center pt-10'>
                         <Table>
                           <TableCaption>{majorProjectItem.projectDescription}</TableCaption>
-                          <TableHeader>
-                            <TableRow>
-                              <TableHead className="w-[100px]">Project Description</TableHead>
-                              <TableHead>Client</TableHead>
-                              <TableHead>Scope of Work</TableHead>
-                              <TableHead>Project Value</TableHead>
-                              <TableHead className="text-right">Project Duration</TableHead>
-                            </TableRow>
-                          </TableHeader>
-                          <TableBody>
+                          <TableBody className='w-fit'>
                             <TableRow key={majorProjectItem.projectDescription}>
+                              <TableHead className="w-[100px]">Project Description</TableHead>
                               <TableCell className="font-medium">{majorProjectsData[0].projectDescription}</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableHead>Client</TableHead>
                               <TableCell>{majorProjectItem.client}</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableHead>Scope of Work</TableHead>
                               <TableCell>
                                 <ScopeOfWorkList data={majorProjectItem.scopeOfWork} />
                               </TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableHead>Project Value</TableHead>
                               <TableCell>{majorProjectItem.projectValue}</TableCell>
-                              <TableCell className="text-right">{majorProjectItem.projectDuration}</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableHead>Project Duration</TableHead>
+                              <TableCell>{majorProjectItem.projectDuration}</TableCell>
                             </TableRow>
                           </TableBody>
                         </Table>
@@ -124,8 +127,8 @@ function MajorProjectsPage() {
             </Carousel>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
